@@ -18,7 +18,8 @@
 		Size: <%= p.size %> sm
 	</div>
 	<div>
-		<button class="btn btn-sm btn-success">Buy!</button>
+<!--		<button class="btn btn-sm btn-success" onclick="alert('Hello!')">Buy!</button> это для проверки -->
+<button class="btn btn-sm btn-success" onclick="add_to_cart(<%= p.id %>)">Buy!</button>
 	</div>
 	</div>
 <% end %>
