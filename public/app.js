@@ -20,6 +20,12 @@ function something()
 
 		alert('Items in your cart: ' + cart_get_number_of_items()); 
 		//add little window for displaying summ all the products
+		update_orders_input();
+	}
+	function update_orders_input()
+	{
+		var orders = cart_get_orders();
+		$('#orders_input').val(orders);
 	}
 
 /* 1 variant
