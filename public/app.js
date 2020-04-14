@@ -52,3 +52,17 @@ function cart_get_number_of_items ()
 	}
 	return cnt;// body...
 }
+function cart_get_orders()
+{
+	var orders = '';
+	for(var i = 0; i < window.localStorage.length; i++)
+	{
+		var key = window.localStorage.key(i); // get the key
+		var value = window.localStorage.getItem(key); // get value
+		 if(key.indexOf('product_') == 0)
+		 {
+		 	orders = orders + key + '=' + value + ',';
+		 }
+	}
+	return orders;
+}
