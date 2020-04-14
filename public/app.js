@@ -12,5 +12,8 @@ function something()
 
 	function add_to_cart(id)
 	{
-		alert('You add product with id:' + id);                                                                     
+		//alert('You add product with id:' + id);                                                                     
+		var x = window.localStorage.getItem('product_' + id);
+		x = x * 1 + 1; 
+		window.localStorage.setItem('product_' + id, x);
 	}
