@@ -21,13 +21,20 @@ function something()
 		alert('Items in your cart: ' + cart_get_number_of_items()); 
 		//add little window for displaying summ all the products
 		update_orders_input();
+		update_orders_button();
 	}
+
 	function update_orders_input()
 	{
 		var orders = cart_get_orders();
 		$('#orders_input').val(orders);
 	}
 
+function update_orders_button()
+{
+	var text = 'Cart (' + cart_get_number_of_items() + ')';
+	$('#orders_button').val(text);
+}
 /* 1 variant
 function get_number_products()
 {
