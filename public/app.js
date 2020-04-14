@@ -1,5 +1,5 @@
 function something()
-	{
+{
 		//alert('Hello! ;-)');
 		/* этот код ниже для проверки переменной +-
 		*/
@@ -8,7 +8,7 @@ function something()
 
 		window.localStorage.setItem('bbb', x); // hh['bbb'] = x
 		alert(x); 
-	}
+}
 
 	function add_to_cart(id)
 	{
@@ -17,4 +17,38 @@ function something()
 		var x = window.localStorage.getItem(key);
 		x = x * 1 + 1; 
 		window.localStorage.setItem(key, x);
+
+		alert('Items in your cart: ' + cart_get_number_of_items()); 
+		//add little window for displaying summ all the products
 	}
+
+/* 1 variant
+function get_number_products()
+{
+		var total = 0;
+for (var i = 0; i < window.localStorage.length; i++) 
+	{
+	var key = window.localStorage.key(i);
+		if (key.search("prod")>=0)
+		{ 
+			total = total * 1 + window.localStorage[key]*1;
+		}
+	}
+document.getElementById("basket").innerHTML = "your basket contans " + total + " products";
+} */
+// 2 variant
+function cart_get_number_of_items () 
+{
+	var cnt = 0;
+	for(var i = 0; i < window.localStorage.length; i++) 
+	{
+		var key = window.localStorage.key(i);
+		var value = window.localStorage.getItem(key);
+		if(key.indexOf('product_') == 0) 
+		{
+			//cnt++; calculate amount type products
+			cnt = cnt + value * 1; // calculate amount all products
+		}
+	}
+	return cnt;// body...
+}
