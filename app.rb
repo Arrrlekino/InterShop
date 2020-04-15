@@ -20,7 +20,8 @@ end
 post '/cart' do
 	orders_input = params[:orders] 
 	@orders = parse_orders_input orders_input
-	erb "Hi #{@orders.inspect}"
+	#erb "Hi #{@orders.inspect}" because added new erb
+	erb :cart
 end	
 
 def parse_orders_input orders_input
