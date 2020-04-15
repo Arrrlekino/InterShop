@@ -17,13 +17,15 @@ end
 get '/about' do
 	erb :about
 end
+
 post '/cart' do
-	orders_input = params[:orders] 
-	@items = parse_orders_input orders_input
+	@orders_input = params[:orders] 
+	@items = parse_orders_input @orders_input
 	#erb "Hi #{@orders.inspect}" because added new erb
 	@items.each do |item|
 		item[0] = Product.find(item[0])
 	end	
+	#@o = {}
 	erb :cart
 end	
 
