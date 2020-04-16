@@ -1,3 +1,4 @@
 
 intershop.db
 db/schema.rb
+db/migrate/20200416180116_add_orders.rb
