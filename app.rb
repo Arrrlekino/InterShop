@@ -27,7 +27,7 @@ post '/place_order' do
 end	
 
 post '/cart' do
-	@orders_input = params[:orders] 
+	@orders_input = params[:orders_input] 
 	@items = parse_orders_input @orders_input
 	#erb "Hi #{@orders.inspect}" because added new erb
 	@items.each do |item|
