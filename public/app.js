@@ -82,6 +82,10 @@ function cart_get_orders()
 
 function cancel_order()
 {
-	alert('aaa');
+	//alert('aaa'); for example
+	window.localStorage.clear();
+
+	update_orders_input();
+	update_orders_button(); // without its work
 	return false;
 }
